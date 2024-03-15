@@ -13,32 +13,40 @@
     // Prendi i dati dal form
     $text = $_GET['textarea'];
     $badword = $_GET['badWords'];
-    // var_dump($badword)
 
     // Calcola la lunghezza del testo
     $length = strlen($text);
 
     // Sostituisci la parola da censurare con ***
     $censored_text = str_replace($badword, '***', $text);
-    // var_dump($censored_text)
     $censored_length = strlen($censored_text);
 ?>
 
 <div class="container">
     <div class="row">
+        <div class="col-12 mt-5">
+            <h1 class="text-center">La tua frase censurata!</h1>
+        </div>
         <div class="col-6 offset-3">
-            <p id="first">
-                <?php
-                    echo "Il tuo testo: $text <br>";
-                    echo "Lunghezza del testo: $length <br>";
-                ?>
-            </p>
-            <p id="second">
-                <?php
-                    echo "Testo censurato: $censored_text <br>";
-                    echo "Lunghezza del testo censurato: $censored_length <br>";
-                ?>
-            </p>
+            <div class="row mt-5">
+                <div class="col-12 mb-4">
+                    <h3 class="w-50 d-inline text-center">FRASE NON CENSURATA</h3>
+                    <h3 class="ps-5 d-inline">FRASE CENSURATA</h3>
+                </div>
+                <p class="col-6 text-center d-flex flex-column" id="first">
+                    <?php
+                        echo "Testo: $text <br>";
+                        echo "Lunghezza del testo: $length <br>";
+                    ?>
+                </p>
+                <p class="col-6 text-center" id="second">
+                    <?php
+                        echo "Testo : $censored_text <br>";
+                        echo "Lunghezza del testo censurato: $censored_length <br>";
+                    ?>
+                </p>
+
+            </div>
         </div>
     </div>
 </div>
