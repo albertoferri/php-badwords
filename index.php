@@ -15,17 +15,18 @@
         <div class="row mt-5">
             <h1 class="text-center mb-4">Pagina del form</h1>
 
-            <form class="col-6 offset-3" action="results.php">
+            <form class="col-6 offset-3" action="results.php" method="GET">
                 <div class="mb-3">
                     <label for="Textarea" class="form-label">Scrivi la frase che vuoi</label>
-                    <textarea class="form-control" id="Textarea" rows="3" placeholder="Scrivi..."></textarea>
+                    <textarea class="form-control" id="Textarea" name="textarea" rows="3" placeholder="Scrivi..."></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="badWords" class="form-label">Scrivi una parola che ritieni sia bannabile</label>
-                    <input type="text" class="form-control" id="badWords" placeholder="La tua parola">
+                    <input type="text" class="form-control" id="badWords" name="badWords" placeholder="La tua parola">
                     <input class="mt-3 px-3 py-2 text-uppercase bg-warning border-0 rounded-2 text-black fw-bold" type="submit">
                 </div>
             </form>
+
         </div>
     </div>
 

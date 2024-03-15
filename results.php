@@ -9,19 +9,40 @@
 
 </head>
 <body>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-6 offset-3">
-                <p id="first">
-                    
-                </p>
-                <p id="second">
-                    
-                </p>
-            </div>
+<?php
+    // Prendi i dati dal form
+    $text = $_GET['textarea'];
+    $badword = $_GET['badWords'];
+    // var_dump($badword)
+
+    // Calcola la lunghezza del testo
+    $length = strlen($text);
+
+    // Sostituisci la parola da censurare con ***
+    $censored_text = str_replace($badword, '***', $text);
+    // var_dump($censored_text)
+    $censored_length = strlen($censored_text);
+?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <p id="first">
+                <?php
+                    echo "Il tuo testo: $text <br>";
+                    echo "Lunghezza del testo: $length <br>";
+                ?>
+            </p>
+            <p id="second">
+                <?php
+                    echo "Testo censurato: $censored_text <br>";
+                    echo "Lunghezza del testo censurato: $censored_length <br>";
+                ?>
+            </p>
         </div>
     </div>
+</div>
+
 
     
 
